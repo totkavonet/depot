@@ -13,7 +13,8 @@
 <body>
 
 <header class="main">
-  <%= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf' %>
+  <%#= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf' %>
+  <a href="/"> <%= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf' %></a>
   <h1><%= @page_title %></h1>
 </header>
 <section class="content">
@@ -23,6 +24,8 @@
       <li><a href="/questions">Questions</a></li>
       <li><a href="/news">News</a></li>
       <li><a href="/contact">Contact</a></li>
+      <li><a href="/products">Products</a></li>
+      <li><p><%= @time %></p></li>
     </ul>
   </nav>
   <main class='<%= controller.controller_name %>'>

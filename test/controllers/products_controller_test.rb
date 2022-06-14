@@ -9,6 +9,9 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
     get products_url
     assert_response :success
+    assert_select 'nav.side_nav a', minimum: 5
+    assert_select 'main table tbody tr', 3
+    assert_select 'h1', 'Products'
   end
 
   test "should get new" do
@@ -43,7 +46,11 @@ class ProductsControllerTest < ActionDispatch::IntegrationTest
     assert_difference('Product.count', -1) do
       delete product_url(@product)
     end
-
     assert_redirected_to products_url
   end
+
+  def product_index_url
+    # code here
+  end
+
 end
