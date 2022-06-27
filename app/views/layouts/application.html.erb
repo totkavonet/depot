@@ -15,11 +15,20 @@
 <header class="main">
   <%#= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf' %>
   <a href="/"> <%= image_tag 'logo.svg', alt: 'The Pragmatic Bookshelf' %></a>
-<!--  <a> <%#= "The users check this page #{pluralize($count_n, 'time')}" if $count_n > 5 %> </a>-->
+  <!--  <a> <%#= "The users check this page #{pluralize($count_n, 'time')}" if $count_n > 5 %> </a>-->
   <h1><%= @page_title %></h1>
 </header>
 <section class="content">
   <nav class="side_nav">
+    <div id="cart" class="carts">
+      <% if @cart %>
+        <div id="cart" class="carts">
+          <%= render @cart %>
+        </div>
+      <% end %>
+
+
+    </div>
     <ul>
       <li><a href="/">Home</a></li>
       <li><a href="/questions">Questions</a></li>

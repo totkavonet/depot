@@ -1,5 +1,7 @@
 class StoreController < ApplicationController
   before_action :session_counter, only: [ :index ]
+  include CurrentCart
+  before_action :set_cart
 
   def session_counter
     if $count_n.nil?
